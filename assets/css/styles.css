@@ -1,0 +1,6 @@
+/*Arquivos globais*/
+@import url('base/reset.css');
+@import url('base/global.css');
+/*Arquivos de components*/
+@import url('components/NavBar/navBar.css');
+@import url('components/Intro/intro.css')

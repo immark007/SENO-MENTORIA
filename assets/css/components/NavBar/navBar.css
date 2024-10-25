@@ -1,0 +1,116 @@
+.header{
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    align-items: center;
+    background-color: #110F17;
+    z-index: 1000;
+}
+
+.navigation{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 10px;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.navigation .logo h1{
+    color: white;
+}
+
+.navigation .navigation-ul{
+    display: flex;
+    list-style: none;
+    gap: 40px;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.navigation .navigation-ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.login-logout{
+    display: flex;
+    gap: 20px;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.login-logout .entrar a,
+.login-logout .cadastrar a{
+    color: white;
+}
+
+.menu-toggle{
+    display: none;
+    cursor: pointer;
+    font-size: 1.8rem;
+    color: white;
+}
+
+.menu-toggle i {
+    transition: transform 0.3s ease;
+}
+.navigation.active .menu-toggle i {
+    transform: rotate(90deg);
+}
+
+@media (max-width: 768px) {
+    .navigation .navigation-ul,
+    .login-logout {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .navigation.active .navigation-ul {
+        display: flex;
+        flex-direction: column;
+        background-color: #110F17;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        padding: 20px 0;
+        gap: 20px;
+        align-items: center;
+        max-height: 500px;
+        opacity: 1;
+    }
+
+    .navigation.active .login-logout {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        background-color: #110F17;
+        padding-bottom: 20px;
+        max-height: 300px;
+        opacity: 1;
+    }
+}
+
+
+@media (min-width: 769px) {
+    .navigation .navigation-ul,
+    .login-logout {
+        display: flex;
+        opacity: 1;
+        max-height: none;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+}
